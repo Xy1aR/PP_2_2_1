@@ -1,5 +1,6 @@
 package hiber.model;
 
+import java.util.StringJoiner;
 import javax.persistence.*;
 
 @Entity
@@ -52,10 +53,10 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car: {" +
-                "id=" + id +
-                ", model='" + model + '\'' +
-                ", series=" + series +
-                '}';
+        return new StringJoiner(", ", "Car [", "]")
+                .add("id=" + id)
+                .add("model='" + model + "'")
+                .add("series=" + series)
+                .toString();
     }
 }
